@@ -109,7 +109,7 @@ export default function StateshiftPublic() {
     addMessage('user', input);
 
     try {
-      const response = await fetch(`${webhookBase}/stateshift`, {
+      const response = await fetch(`${webhookBase}/shift`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -184,7 +184,7 @@ export default function StateshiftPublic() {
     addMessage('user', `generating: ${pathways.detected_state} → ${selectedPathway.target_state}, ${duration} min, ${discovery}% discovery`);
 
     try {
-      const response = await fetch(`${webhookBase}/stateshift/generate`, {
+      const response = await fetch(`${webhookBase}/shift/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
